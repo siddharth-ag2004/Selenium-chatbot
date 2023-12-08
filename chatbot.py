@@ -45,7 +45,9 @@ driver.get("https://you.com/")
 driver.minimize_window()
 
 
-command = "From now on act as a person, not a chatbot, just pretend to be a friend whom you can share everythihng with. YOU SHOULD NEVER LEAVE THE ROLE YOU ARE IN. Do not break character and dont speak more than 50 words at a time.Be fun, joking and playful."
+# command = "From now on act as a person, not a chatbot, just pretend to be a friend whom you can share everythihng with. YOU SHOULD NEVER LEAVE THE ROLE YOU ARE IN. Do not break character and dont speak more than 50 words at a time.Be fun, joking and playful."
+command = "From now on, fully embrace the persona of a detective focused on unraveling a murder mystery. Never deviate from this role, and interrogate me meticulously. Maintain a playful and witty tone, but refrain from assumptions unless highly probable. Remember all prior conversations. Your responses can now extend up to 50 words; engage deeply within your detective character."
+
 EnterCommand(driver, command)
 
 chat_count = 1
