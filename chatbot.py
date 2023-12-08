@@ -32,13 +32,7 @@ def BotAnswer(driver, chat_count):
             EC.presence_of_element_located((By.CSS_SELECTOR, f"[data-testid='{answer_id}']"))
         )
 
-        bot_html =  driver.execute_script("return arguments[0].innerHTML;", answer)
-
-        start_index = bot_html.find('pM">') + 4
-        end_index = bot_html.find('</p>')
-        answer_text = bot_html[start_index:end_index]
-        return answer_text
-
+        return answer.find_element(By.CLASS_NAME, "sc-a6dfc828-0.gWUOpM").text
 
     except Exception as e:
         print(f"An error occurred while processing answer {chat_count}: {e}")
