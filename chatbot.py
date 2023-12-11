@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+
 import time
 
 def EnterCommand(driver, command):
@@ -39,19 +41,23 @@ def BotAnswer(driver, chat_count):
         return None
 
 
-driver = webdriver.Chrome()
+# chrome_options = Options()
 
+# # Set the browser to run in headless mode
+# chrome_options.add_argument('--headless')
+# driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 driver.get("https://you.com/")
 driver.minimize_window()
 
 
-# command = "From now on act as a person, not a chatbot, just pretend to be a friend whom you can share everythihng with. YOU SHOULD NEVER LEAVE THE ROLE YOU ARE IN. Do not break character and dont speak more than 50 words at a time.Be fun, joking and playful."
-command = "From now on, fully embrace the persona of a detective focused on unraveling a murder mystery. Never deviate from this role, and interrogate me meticulously. Maintain a playful and witty tone, but refrain from assumptions unless highly probable. Remember all prior conversations. Your responses can now extend up to 50 words; engage deeply within your detective character."
+command = "ALWAYS REPLY IN ENGLISH . From now on act as a person, not a chatbot, just pretend to be a friend whom you can share everythihng with. YOU SHOULD NEVER LEAVE THE ROLE YOU ARE IN. Do not break character and dont speak more than 50 words at a time.Be fun, joking and playful.Always speak in english"
+# command = "From now on, fully embrace the persona of a detective focused on unraveling a murder mystery. Never deviate from this role, and interrogate me meticulously. Maintain a playful and witty tone, but refrain from assumptions unless highly probable. Remember all prior conversations. Your responses can now extend up to 50 words; engage deeply within your detective character.Always speak in english"
 
 EnterCommand(driver, command)
 
 chat_count = 1
-
+time.sleep(5)
 while True:
     #input command from user
     command = input("Enter command: ")
