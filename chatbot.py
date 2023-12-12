@@ -61,6 +61,9 @@ time.sleep(5)
 while True:
     #input command from user
     command = input("Enter command: ")
+    if len(command)==0:
+        print("Please Enter A valid(non-empty) command")
+        continue
     if command == "quit":
         break
     EnterCommand(driver, command)
